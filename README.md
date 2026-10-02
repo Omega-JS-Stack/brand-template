@@ -1,30 +1,39 @@
-# Brand Template
+<!-- omega:template -->
+# OMEGA brand template
 
-The parent of every OMEGA brand monorepo. It ships only this README on purpose:
-the onboard wizard generates everything (package.json, .gitignore, config,
-apps), and any file the template shipped would permanently shadow the generated
-one — onboard never overwrites existing files.
+In a few minutes you will have your own brand's website running on your machine, ready to grow into a backend, a desktop app and a browser extension.
 
-## Creating a brand repo
+<p align="center">
+  <a href="https://github.com/Omega-JS-Stack/brand-template/generate">
+    <img src="https://img.shields.io/badge/Use_this_template-Create_your_brand-2ea44f?style=for-the-badge&logo=github&logoColor=white" height="56" alt="Use this template: create your brand">
+  </a>
+</p>
 
-```sh
-gh repo create <org>/<brand>-omega --private --template Omega-JS-Stack/brand-template --clone
-```
+## Get started
 
-## Bootstrap (local-link era, until the packages publish)
+1. Click **Use this template** above and name your repo `<your-brand>-omega` (for example `acme-omega`).
+2. Clone it and step inside:
+   ```bash
+   git clone https://github.com/<you>/<your-brand>-omega.git && cd <your-brand>-omega
+   ```
+3. Start it, and press Enter through the short wizard:
+   ```bash
+   npm start
+   ```
+   It installs OMEGA, writes your brand, and boots your site. The terminal prints its local address.
 
-From the clone:
+You need Node 22 or newer and a GitHub account.
 
-1. `node <omega-monorepo>/packages/manager/dist/cli-run.js onboard --id=<brand>` — the wizard scaffolds the monorepo and walks through brand setup.
-2. From any app dir: `node <omega-monorepo>/packages/web/bin/omega i local` — links the whole tree to the local framework packages.
-3. `npm run manage` — the manage cycle takes it from there.
+## What is inside
 
-Replace this README with the brand's own once the repo has content.
+- A website in `targets/web`, built on `@omega.js/web`, with a theme you can change.
+- One config file, `config/omega.json5`, for your brand's name, look and services.
+- A `.env` file for secrets, kept out of git.
+- Room to grow: `npx omega onboard --targets=web,backend` adds a backend, and the desktop app and the browser extension work the same way.
+- `npm run manage`, which sets up your cloud services when you are ready.
 
-## Bootstrap (after the packages publish to npm)
+## What next
 
-1. `npm install`
-2. `npx omega onboard`
-
-Note: this flow also needs `@omega.js/manager` to ship the `omega` bin — tracked
-on the omega repo.
+- [OMEGA docs](https://omegajs.dev)
+- [Working in your brand](https://github.com/Omega-JS-Stack/omega/blob/main/docs/manager/brand.md)
+- [The OMEGA framework](https://github.com/Omega-JS-Stack/omega)

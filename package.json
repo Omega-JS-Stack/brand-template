@@ -1,0 +1,11 @@
+{
+  "name": "omega-brand-template",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "omega": { "template": true },
+  "scripts": {
+    "prestart": "node -e \"if (+process.versions.node.split('.')[0] < 22) { console.error('OMEGA needs Node 22 or newer. You have ' + process.version + '.'); process.exit(1) }\"",
+    "start": "npm install && omega onboard"
+  },
+  "devDependencies": { "@omega.js/manager": "latest" }
+}
